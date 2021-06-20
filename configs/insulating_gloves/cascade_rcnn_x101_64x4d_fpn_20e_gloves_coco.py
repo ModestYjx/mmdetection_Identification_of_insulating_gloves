@@ -11,6 +11,7 @@ model = dict(
 # Modify dataset related settings
 dataset_type = 'COCODataset'
 classes = ("badge", "person", "glove", "wrongglove", "operatingbar", "powerchecker")
+data_root = 'data/gloves/'
 data = dict(
     train=dict(
         img_prefix='',
