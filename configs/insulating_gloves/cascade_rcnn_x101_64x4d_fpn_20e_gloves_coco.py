@@ -1,6 +1,4 @@
 _base_ = './cascade_rcnn_r50_fpn_20e_coco.py'
-# The new config inherits a base config to highlight the necessary modification
-_base_ = 'mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_coco.py'
 
 # We also need to change the num_classes in head to match the dataset's annotation
 model = dict(
@@ -16,15 +14,15 @@ data = dict(
     train=dict(
         img_prefix='',
         classes=classes,
-        ann_file='1_images/annotation_coco.json'),
+        ann_file='data/gloves/annotations/instances_train2017.json'),
     val=dict(
         img_prefix='',
         classes=classes,
-        ann_file='gloves/1_images/val/annotation_coco.json'),
+        ann_file='data/gloves/annotations/instances_val2017.json'),
     test=dict(
         img_prefix='',
         classes=classes,
-        ann_file='gloves/1_images/val/annotation_coco.json'))
+        ann_file='data/gloves/annotations/instances_val2017.json'))
 
 model = dict(
     type='CascadeRCNN',
